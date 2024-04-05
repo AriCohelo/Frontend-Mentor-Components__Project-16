@@ -1,0 +1,122 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'resets.scss';
+
+body {
+	font-size: 15px;
+	font-family: $Ff-primary;
+	background-color: $Clr-veryLightGray;
+}
+.presentation {
+	padding: 4rem 10rem 4rem 10rem;
+	&__titles {
+		@include flexer(column, center, center);
+		margin-bottom: 4rem;
+	}
+	&__title-1 {
+		font-size: 2.25rem;
+		font-weight: 275;
+		color: $Clr-veryDarkBlue;
+	}
+	&__title-2 {
+		font-size: 2.25rem;
+		font-weight: $Fw-semiBold;
+		color: $Clr-veryDarkBlue;
+		margin-bottom: 1rem;
+	}
+	&__title-3 {
+		text-align: center;
+		font-size: 1rem;
+		font-weight: $Fw-regular;
+		color: $Clr-grayishBlue;
+		width: 33.75rem;
+	}
+	&__team {
+		@include flexer();
+		gap: 2rem;
+		&-middle {
+			@include flexer(column, center, center);
+			gap: 2rem;
+		}
+	}
+	&__cards {
+		box-sizing: border-box;
+		width: 21.875rem;
+		min-width: 13.75rem;
+		background-color: $Clr-veryLightGray;
+		border-radius: 10px;
+		padding: 2rem;
+		box-shadow: 0px 10px 30px 2px rgba(163, 165, 174, 0.25);
+		position: relative;
+		overflow: hidden;
+		&-titles {
+			color: $Clr-veryDarkBlue;
+			font-size: 1.25rem;
+			font-weight: $Fw-semiBold;
+			margin-bottom: 0.5rem;
+		}
+		&-description {
+			font-size: 0.8125rem;
+			font-weight: $Fw-medium;
+			color: $Clr-grayishBlue;
+			margin-bottom: 2.75rem;
+			line-height: 1.4375rem;
+		}
+		&-images {
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+	&__card1-color,
+	&__card2-color,
+	&__card3-color,
+	&__card4-color {
+		height: 0.25rem;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&__card1-color {
+		background-color: $Clr-cyan;
+	}
+	&__card2-color {
+		background-color: $Clr-red;
+	}
+	&__card3-color {
+		background-color: $Clr-orange;
+	}
+	&__card4-color {
+		background-color: $Clr-blue;
+	}
+}
+@media (max-width: 760px) {
+	.presentation {
+		&__title-1,
+		&__title-2,
+		&__title-3 {
+			min-width: 19rem;
+		}
+		&__title-1 {
+			font-size: 1.5rem;
+		}
+		&__title-2 {
+			font-size: 1.5rem;
+		}
+		&__title-3 {
+			font-size: 1rem;
+			text-align: center;
+			max-width: 19.5rem;
+		}
+
+		&__team {
+			@include flexer(column, center, center);
+		}
+	}
+}
+@media (max-width: 1350px) {
+	.presentation {
+		padding: 5.25rem 2.5rem 5.25rem 2.5rem;
+	}
+}
